@@ -1,0 +1,133 @@
+write a program to find max betweeen two numbers
+import java.util.Scanner;
+
+public class MaxNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        if (a > b) {
+            System.out.println("Maximum number = " + a);
+        } else {
+            System.out.println("Maximum number = " + b);
+        }
+
+        sc.close();
+    }
+}
+output:
+Enter first number: 5
+Enter second number: 7
+Maximum number = 7
+
+
+write a program to find max between three numbers
+import java.util.Scanner;
+
+public class MaxOfThree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.print("Enter third number: ");
+        int c = sc.nextInt();
+
+        if (a >= b && a >= c) {
+            System.out.println("Maximum number = " + a);
+        } else if (b >= a && b >= c) {
+            System.out.println("Maximum number = " + b);
+        } else {
+            System.out.println("Maximum number = " + c);
+        }
+
+        sc.close();
+    }
+}
+output:
+Enter first number: 8
+Enter second number: 3
+Enter third number: 2
+Maximum number = 8
+
+write a program to check whether the charater is alphabetic or not.
+import java.util.Scanner;
+
+public class AlphabetCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            System.out.println("It is an alphabet.");
+        } else {
+            System.out.println("It is not an alphabet.");
+        }
+
+        sc.close();
+    }
+}
+output:
+Enter a character: a
+It is an alphabet.
+
+
+Write a program to input any alphabet and check whether it's vowel or consonent.
+import java.util.Scanner;
+
+public class VowelConsonant {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an alphabet: ");
+        char ch = sc.next().charAt(0);
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            System.out.println("It is a Vowel.");
+        } else {
+            System.out.println("It is a Consonant.");
+        }
+
+        sc.close();
+    }
+}
+output:
+Enter an alphabet: m
+It is a Consonant.
+
+Write a program to input  any character and check whether it is an alphabetic or digit or any special character. 
+import java.util.Scanner;
+
+public class CharacterCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+        if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            System.out.println("It is an Alphabet.");
+        } else if (ch >= '0' && ch <= '9') {
+            System.out.println("It is a Digit.");
+        } else {
+            System.out.println("It is a Special Character.");
+        }
+
+        sc.close();
+    }
+}
+output:
+Enter a character: _
+It is a Special Character.
