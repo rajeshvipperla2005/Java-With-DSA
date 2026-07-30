@@ -1,0 +1,549 @@
+Print all elements of an array.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+output:
+      10 20 30 40 50
+
+
+find the sum of all elements.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+output:
+      Sum of all elements: 150
+
+
+find the average of array elements.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        double average = (double) sum / arr.length;
+
+        System.out.println("Average: " + average);
+    }
+}
+output:
+      Average: 30.0
+
+
+find the largest element.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int largest = arr[0]; 
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        System.out.println("Largest element: " + largest);
+    }
+}
+output:
+      Largest element: 50
+
+
+find the smallest element.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        int smallest = arr[0]; 
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+
+        System.out.println("Smallest element: " + smallest);
+    }
+}
+output:
+      Smallest element: 10
+
+
+count even and odd numbers.
+program:
+        public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 21, 30, 41, 50};
+        int even = 0, odd = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0)
+                even++;
+            else
+                odd++;
+        }
+
+        System.out.println("Even: " + even);
+        System.out.println("Odd: " + odd);
+    }
+}
+output:
+      even = 3
+      odd = 2
+
+
+Reverse an array.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+    output:
+          50 40 30 20 10
+
+          
+Search for a given element.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int key = 30;
+        boolean found = false;
+
+        for (int num : arr) {
+            if (num == key) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Found" : "Not Found");
+    }
+}
+output:
+found
+
+
+Count occurrence of a specific number.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 20, 50};
+        int key = 20;
+        int count = 0;
+
+        for (int num : arr) {
+            if (num == key) {
+                count++;
+            }
+        }
+
+        System.out.println("Occurrences: " + count);
+    }
+}
+output:
+occurrences = 2
+
+
+Find the second largest element.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > first) {
+                second = first;
+                first = num;
+            } else if (num > second && num != first) {
+                second = num;
+            }
+        }
+
+        System.out.println("Second Largest: " + second);
+    }
+}
+output:
+second largest = 40
+
+Merge two arrays.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3};
+        int[] b = {4, 5, 6};
+
+        int[] merged = new int[a.length + b.length];
+
+        for (int i = 0; i < a.length; i++)
+            merged[i] = a[i];
+
+        for (int i = 0; i < b.length; i++)
+            merged[a.length + i] = b[i];
+
+        for (int num : merged)
+            System.out.print(num + " ");
+    }
+}
+output:
+After removing duplicates: [10, 20, 30, 40]
+
+
+Remove duplicate elements.
+program:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 20, 30, 40, 40};
+        Set<Integer> set = new LinkedHashSet<>();
+
+        for (int num : arr) {
+            set.add(num);
+        }
+
+        System.out.println("After removing duplicates: " + set);
+    }
+}
+output:
+After removing duplicates: [10, 20, 30, 40]
+
+
+Find the missing number (1 to N).
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5}; // missing 3
+        int n = 5;
+
+        int total = n * (n + 1) / 2;
+        int sum = 0;
+
+        for (int num : arr)
+            sum += num;
+
+        System.out.println("Missing number: " + (total - sum));
+    }
+}
+output:
+Missing number: 3
+
+
+Move all zeros to the end.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {0, 1, 0, 3, 12};
+        int j = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+
+        for (int num : arr)
+            System.out.print(num + " ");
+    }
+}
+output:
+1 3 12 0 0 
+
+
+Rotate array left by one position.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+
+        int first = arr[0];
+        for (int i = 0; i < arr.length - 1; i++)
+            arr[i] = arr[i + 1];
+
+        arr[arr.length - 1] = first;
+
+        for (int num : arr)
+            System.out.print(num + " ");
+    }
+}
+output:
+2 3 4 5 1 
+
+
+Rotate array right by one position.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+
+        int last = arr[arr.length - 1];
+        for (int i = arr.length - 1; i > 0; i--)
+            arr[i] = arr[i - 1];
+
+        arr[0] = last;
+
+        for (int num : arr)
+            System.out.print(num + " ");
+    }
+}
+output:
+5 1 2 3 4 
+
+
+Find the frequency of each element.
+program:
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 3, 3};
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Frequencies: " + map);
+    }
+}
+output:
+Frequencies: {1=1, 2=2, 3=3}
+
+
+Sort array in ascending order (without Arrays.sort).
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 3};
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int num : arr)
+            System.out.print(num + " ");
+    }
+}
+output:
+1 2 3 5 9 
+
+
+Sort array in descending order.
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 3};
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int num : arr)
+            System.out.print(num + " ");
+    }
+}
+output:
+9 5 3 2 1 
+
+
+Find the intersection of two arrays.
+program:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4};
+        int[] b = {3, 4, 5, 6};
+
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> intersection = new HashSet<>();
+
+        for (int num : a)
+            set1.add(num);
+
+        for (int num : b) {
+            if (set1.contains(num)) {
+                intersection.add(num);
+            }
+        }
+
+        System.out.println("Intersection: " + intersection);
+    }
+}
+output:
+Intersection: [3, 4]
+
+
+Find the union of two arrays
+program:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4};
+        int[] b = {3, 4, 5, 6};
+
+        Set<Integer> union = new LinkedHashSet<>();
+
+        for (int num : a)
+            union.add(num);
+
+        for (int num : b)
+            union.add(num);
+
+        System.out.println("Union: " + union);
+    }
+}
+output:
+Union: [1, 2, 3, 4, 5, 6]
+
+
+
+ Find all pairs whose sum equals a target value
+ program:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 3, 5, 7, 8, 9};
+        int target = 7;
+
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : arr) {
+            int complement = target - num;
+
+            if (set.contains(complement)) {
+                System.out.println("Pair: " + num + ", " + complement);
+            }
+            set.add(num);
+        }
+    }
+}
+output:
+Pair: 3, 4
+Pair: 5, 2
+
+
+
+Find the maximum subarray sum (Kadane's Algorithm)
+program:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+
+        int maxSum = arr[0];
+        int currentSum = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            currentSum = Math.max(arr[i], currentSum + arr[i]);
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        System.out.println("Maximum Subarray Sum: " + maxSum);
+    }
+}
+output:
+Maximum Subarray Sum: 6
+
+
+
+Find leaders in an array
+program:
+(A leader is an element greater than all elements to its right)
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {16, 17, 4, 3, 5, 2};
+
+        int maxFromRight = arr[arr.length - 1];
+        System.out.print("Leaders: " + maxFromRight + " ");
+
+        for (int i = arr.length - 2; i >= 0; i--) {
+            if (arr[i] > maxFromRight) {
+                maxFromRight = arr[i];
+                System.out.print(maxFromRight + " ");
+            }
+        }
+    }
+}
+output:
+Leaders: 2 5 17 
+
+
+
+Find the equilibrium index
+program:
+(Index where left sum = right sum)
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 5, 2, 2};
+
+        int totalSum = 0;
+        for (int num : arr)
+            totalSum += num;
+
+        int leftSum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            totalSum -= arr[i]; // right sum
+
+            if (leftSum == totalSum) {
+                System.out.println("Equilibrium Index: " + i);
+                return;
+            }
+
+            leftSum += arr[i];
+        }
+
+        System.out.println("No Equilibrium Index found");
+    }
+}
+output:
+Equilibrium Index: 2
