@@ -1,0 +1,305 @@
+Butterfly Pattern
+program:
+public class Butterfly {
+
+    public static void printPattern(int n)
+    {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 2 * n; j++) {
+
+                if (j > i && j <= 2 * n - i) {
+                    System.out.print("  ");
+                }
+
+                else {
+                    System.out.print("*"+" ");
+                }
+            }
+            System.out.println();
+        }
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= 2 * n; j++) {
+
+                if (j > i && j <= 2 * n - i) {
+                    System.out.print("  ");
+                }
+
+                else {
+                    System.out.print("*"+" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int n = 6;
+        printPattern(n);
+    }
+}
+
+output:
+*                     * 
+* *                 * * 
+* * *             * * * 
+* * * *         * * * * 
+* * * * *     * * * * * 
+* * * * * * * * * * * * 
+* * * * * * * * * * * * 
+* * * * *     * * * * * 
+* * * *         * * * * 
+* * *             * * * 
+* *                 * * 
+*                     * 
+
+
+Design half diamond  pattern
+program:
+import java.util.Scanner;
+
+public class Design {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        for(int i = 1;i<=x;i++){
+         for(int j = 1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println(" ");     }
+
+
+        for(int i = x-1;i>=1;i--){
+            for(int j = 1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println(" ");     }
+    }
+}
+
+output:
+5
+*  
+* *  
+* * *  
+* * * *  
+* * * * *  
+* * * *  
+* * *  
+* *  
+*  
+
+
+Diamond Pattern
+program:
+import java.util.Scanner;
+
+public class Diamond {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter no of rows: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+output:
+Enter no of rows: 3
+  *
+ ***
+*****
+ ***
+  *
+
+
+Armstrong Number
+program:
+import java.util.Scanner;
+
+public class Forloop {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a 3-digit number: ");
+        int x = sc.nextInt();
+
+        String num = String.valueOf(x);
+        int sum = 0;
+
+        for (int i = 0; i < num.length(); i++) {
+            int digit = num.charAt(i) - '0';
+            sum += Math.pow(digit, 3);
+        }
+
+        if (sum == x) {
+            System.out.println("Armstrong Number");
+        } else {
+            System.out.println("Not an Armstrong Number");
+        }
+
+        sc.close();
+    }
+}
+
+output:
+Enter a 3-digit number: 567
+Not an Armstrong Number
+
+
+Matrix Multiplication
+program:
+import java.util.Scanner;
+
+public class Multiplematrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Matrix row size for A : ");
+        int r1 = sc.nextInt();
+        System.out.print("Enter Matrix column size for A : ");
+        int c1 = sc.nextInt();
+        System.out.print("Enter Matrix row size for B : ");
+        int r2 = sc.nextInt();
+        System.out.print("Enter Matrix column size for B : ");
+        int c2 = sc.nextInt();
+
+        int A[][] = new int[r1][c1];
+        int B[][] = new int[r2][c2];
+        int C[][] = new int[r1][c2];
+        System.out.println("Enter Matrix A: ");
+        for(int i=0;i<r1;i++){
+            for(int j = 0;j<c1;j++){
+                A[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("Enter Matrix B: ");
+        for(int i = 0;i<r2;i++){
+            for(int j = 0;j<c2;j++){
+                B[i][j] = sc.nextInt();
+            }
+        }
+        for(int i = 0;i<r1;i++){
+            for(int j=0;j<c1;j++){
+                C[i][j]=0;
+                for(int k = 0;k<c2;k++){
+                C[i][j] = C[i][j]+A[i][k]*B[j][k]; }
+            }
+        }
+        System.out.println("Result Matrix: ");
+        for(int i = 0;i<r1;i++){
+            for(int j = 0;j<c2;j++){
+                System.out.print(C[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+output:
+Enter Matrix row size for A : 2
+Enter Matrix column size for A : 2
+Enter Matrix row size for B : 2
+Enter Matrix column size for B : 2
+Enter Matrix A: 
+1 2 
+3 4
+Enter Matrix B: 
+1 5
+7 8
+Result Matrix: 
+11 23 
+23 53 
+
+
+
+Common Elements in Two Arrays
+program:
+import java.util.Scanner;
+
+public class NestedLoop {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Size of the Array: ");
+        int size = sc.nextInt();
+
+        int[] num1 = new int[size];
+        System.out.println("Enter the array numbers1: ");
+        for(int i = 0;i<size;i++){
+            num1[i] = sc.nextInt();
+        }
+
+        int[] num2 = new int[size];
+        System.out.println("Enter the array numbers2: ");
+        for(int i = 0;i<size;i++){
+            num2[i] = sc.nextInt();
+        }
+        System.out.println("Duplicate number: ");
+        for(int i=0;i<size;i++){
+            for(int j = 0;j<size;j++){
+                if (num1[i] == num2[j]){
+                    System.out.println(num1[i]);
+                }
+            }
+        }
+    }
+}
+
+output:
+Enter Size of the Array: 4
+Enter the array numbers1: 
+4 8 12 16
+Enter the array numbers2: 
+4 16 24 40
+Duplicate number: 
+4
+16
+
+
+Transverse
+program:
+import java.util.Scanner;
+
+public class Transverse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int colm = sc.nextInt();
+        for (int i = 1;i<=colm;i++){
+            for (int j = 1;j<=rows;j++){
+                System.out.print(i*j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+output:
+3
+4
+1 2 3 
+2 4 6 
+3 6 9 
+4 8 12
