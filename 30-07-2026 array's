@@ -547,3 +547,302 @@ public class Main {
 }
 output:
 Equilibrium Index: 2
+
+
+
+Print all elements of a matrix.
+program:
+public class PrintMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Matrix elements:");
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+output:
+Matrix elements:
+1 2 3 
+4 5 6 
+7 8 9 
+
+
+
+Find the sum of all elements.
+program:
+public class MatrixSum {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int sum = 0;
+
+        // Calculate sum of all elements
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+            }
+        }
+
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+
+output:
+Sum of all elements: 45
+
+
+
+Find the largest element.
+program:
+public class LargestElementMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {10, 25, 3},
+            {45, 5, 60},
+            {7, 80, 9}
+        };
+
+        int largest = matrix[0][0];
+
+        // Find largest element
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > largest) {
+                    largest = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("Largest element: " + largest);
+    }
+}
+
+output:
+Largest element: 80
+
+
+
+
+Find the smallest element.
+program:
+public class SmallestElementMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {10, 25, 3},
+            {45, 5, 60},
+            {7, 80, 9}
+        };
+
+        int smallest = matrix[0][0];
+
+        // Find smallest element
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] < smallest) {
+                    smallest = matrix[i][j];
+                }
+            }
+        }
+
+        System.out.println("Smallest element: " + smallest);
+    }
+}
+
+output:
+Smallest element: 3
+
+
+
+Print row-wise sums.
+program:
+public class RowWiseSum {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Row-wise sums:");
+
+        for (int i = 0; i < matrix.length; i++) {
+            int sum = 0;
+
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+            }
+
+            System.out.println("Row " + (i + 1) + ": " + sum);
+        }
+    }
+}
+
+output:
+Row-wise sums:
+Row 1: 6
+Row 2: 15
+Row 3: 24
+
+
+
+Print column-wise sums.
+program:
+public class ColumnWiseSum {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Column-wise sums:");
+
+        for (int j = 0; j < matrix[0].length; j++) {
+            int sum = 0;
+
+            for (int i = 0; i < matrix.length; i++) {
+                sum += matrix[i][j];
+            }
+
+            System.out.println("Column " + (j + 1) + ": " + sum);
+        }
+    }
+}
+
+output:
+Column-wise sums:
+Column 1: 12
+Column 2: 15
+Column 3: 18
+
+
+
+Find the average of all elements.
+program:
+public class MatrixAverage {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int sum = 0;
+        int count = 0;
+
+        // Calculate sum and count of elements
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+                count++;
+            }
+        }
+
+        double average = (double) sum / count;
+
+        System.out.println("Average of all elements: " + average);
+    }
+}
+
+output:
+Average of all elements: 5.0
+
+
+
+Count even and odd numbers.
+program:
+public class CountEvenOdd {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int evenCount = 0;
+        int oddCount = 0;
+
+        // Count even and odd numbers
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    evenCount++;
+                } else {
+                    oddCount++;
+                }
+            }
+        }
+
+        System.out.println("Even numbers count: " + evenCount);
+        System.out.println("Odd numbers count: " + oddCount);
+    }
+}
+
+output:
+Even numbers count: 4
+Odd numbers count: 5
+
+
+
+Print the main diagonal.
+program:
+public class MainDiagonal {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Main diagonal elements:");
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.print(matrix[i][i] + " ");
+        }
+    }
+}
+
+output:
+Main diagonal elements:
+1 5 9 
+
+
+
+Print the secondary diagonal.
+program:
+public class SecondaryDiagonal {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Secondary diagonal elements:");
+
+        int n = matrix.length;
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(matrix[i][n - i - 1] + " ");
+        }
+    }
+}
+
+output:
+Secondary diagonal elements:
+3 5 7
