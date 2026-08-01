@@ -1,0 +1,213 @@
+1D Array 
+program:
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();   
+        int[] a = new int[n];   
+
+        for (int i = 0; i < n; i++) {
+            int val = sc.nextInt();
+            a[i] = val;   
+        }
+
+        for (int i = 0; i < n; i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
+output:
+10
+20
+30
+40
+50
+
+
+
+2D array
+program:
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[][] arr = new int[6][6];
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int maxSum = Integer.MIN_VALUE;
+        for (int i = 0; i <= 3; i++) {
+            for (int j = 0; j <= 3; j++) {
+                int sum = arr[i][j] + arr[i][j+1] + arr[i][j+2]
+                        + arr[i+1][j+1]
+                        + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
+
+                maxSum = Math.max(maxSum, sum);
+            }
+        }
+
+        System.out.println(maxSum);
+    }
+}
+output:
+19
+
+
+
+ifelse
+program:
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n % 2 != 0) {
+            System.out.println("Weird");
+        } else {
+            if (n >= 2 && n <= 5) {
+                System.out.println("Not Weird");
+            } else if (n >= 6 && n <= 20) {
+                System.out.println("Weird");
+            } else {
+                System.out.println("Not Weird");
+            }
+        }
+    }
+}
+sample input:24
+output:not weird
+
+
+
+Data types
+program:
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            try {
+                long x = sc.nextLong();
+                System.out.println(x + " can be fitted in:");
+
+                if (x >= -128 && x <= 127)
+                    System.out.println("* byte");
+
+                if (x >= -32768 && x <= 32767)
+                    System.out.println("* short");
+
+                if (x >= -2147483648L && x <= 2147483647L)
+                    System.out.println("* int");
+
+                if (x >= -9223372036854775808L && x <= 9223372036854775807L)
+                    System.out.println("* long");
+
+            } catch (Exception e) {
+                String s = sc.next();
+                System.out.println(s + " can't be fitted anywhere.");
+            }
+        }
+    }
+}
+output:
+5
+-150
+-150 can be fitted in:
+* short
+* int
+* long
+150000
+150000 can be fitted in:
+* int
+* long
+1500000000
+1500000000 can be fitted in:
+* int
+* long
+213333333333333333333
+213333333333333333333 can't be fitted anywhere.
+-1000000000000
+-1000000000000 can be fitted in:
+* long
+
+
+
+loops
+program:
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(N + " x " + i + " = " + (N * i));
+        }
+    }
+}
+output:
+6
+6 x 1 = 6
+6 x 2 = 12
+6 x 3 = 18
+6 x 4 = 24
+6 x 5 = 30
+6 x 6 = 36
+6 x 7 = 42
+6 x 8 = 48
+6 x 9 = 54
+6 x 10 = 60
+
+
+
+loop 2
+program:
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt(); // number of queries
+
+        while (t-- > 0) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int n = sc.nextInt();
+
+            int sum = a;
+            int power = 1; // represents 2^i
+
+            for (int i = 0; i < n; i++) {
+                sum += power * b;
+                System.out.print(sum + " ");
+                power *= 2; // update 2^i
+            }
+            System.out.println();
+        }
+    }
+}
+output:
+2
+0 2 10
+2 6 14 30 62 126 254 510 1022 2046 
+5 3 5
+8 14 26 50 98 
+
+
+
