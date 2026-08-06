@@ -1,0 +1,311 @@
+import java.util.*;
+public class romantoint {
+     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         String s = sc.nextLine();
+         int result = romanToInt(s);
+         System.out.println(result);
+     }
+     public static int romanToInt(String s) {
+         Map<Character, Integer> romanMap = new HashMap<>();
+         romanMap.put('I', 1);
+         romanMap.put('V', 5);
+         romanMap.put('X', 10);
+          romanMap.put('L', 50);
+         romanMap.put('C', 100);
+         romanMap.put('D', 500);
+         romanMap.put('M', 1000);
+         int total = 0;
+         int prevValue = 0;
+         for (int i = s.length() - 1; i >= 0; i--) {
+             char currentChar = s.charAt(i);
+             int currentValue = romanMap.get(currentChar);
+             if (currentValue < prevValue) {
+                 total -= currentValue;
+             } else {
+                 total += currentValue;
+             }
+             prevValue = currentValue;
+         }
+         return total;
+     }
+ }
+
+ Results:
+ Input: "Iv"
+ Output: 4 //
+
+
+ import java.util.*;
+ public class happynumber {
+     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+          int n = sc.nextInt();
+         boolean result = isHappy(n);
+         System.out.println(result);
+     }
+     public static boolean isHappy(int n) {
+         Set<Integer> seen = new HashSet<>();
+         while (n != 1 && !seen.contains(n)) {
+             seen.add(n);
+             n = getNext(n);
+         }
+         return n == 1;
+     }
+     private static int getNext(int n) {
+         int totalSum = 0;
+         while (n > 0) {
+             int digit = n % 10;
+             totalSum += digit * digit;
+             n /= 10;
+         }
+         return totalSum;
+     }
+ }
+ Results:
+ Input: 19 // 
+
+ 
+ import java.util.Scanner;
+ public class Solution {
+     public boolean isArmstrong(int n) {
+         int temp = n, sum = 0;
+         int k = String.valueOf(n).length();
+         while (temp > 0) {
+             sum += Math.pow(temp % 10, k);
+             temp /= 10;
+         }
+         return sum == n;
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         boolean result = solver.isArmstrong(input);
+         System.out.println("Is Armstrong Number: " + result);
+         scanner.close();
+     }
+ }
+
+ Results:
+ Input: 153
+ Output: true //
+
+
+
+ import java.util.*;
+ public class Solution {
+     public boolean isPowerOfFour(int n) {
+         return n > 0 && (n & (n - 1)) == 0 && (n & 0x55555555) != 0;
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         boolean result = solver.isPowerOfFour(input);
+         System.out.println("Is Power of Four: " + result);
+         scanner.close();
+     }
+ }
+
+ Results:
+ Input: 16
+Output: true //
+
+
+
+ import java.util.*;
+ public class Solution {
+     public long factorial(int n) {
+         long result = 1;
+         for (int i = 2; i <= n; i++) {
+             result *= i;
+         }
+         return result;
+     }
+     public static void main(String[] args) {/         Scanner scanner = new Scanner(System.in
+         System.out.print("Enter an integer: ");/         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         long result = solver.factorial(input);
+         System.out.println("Factorial: " + result);
+         scanner.close();
+     }
+ }
+
+ Results:
+ Input: 5
+ Output: 120 //
+
+
+
+ import java.util.*;
+ public class Solution {
+     public String convertToTitle(int columnNumber) {
+         StringBuilder sb = new StringBuilder();
+         while (columnNumber > 0) {
+             columnNumber--;
+             sb.append((char) ('A' + columnNumber % 26));
+             columnNumber /= 26;
+         }
+         return sb.reverse().toString();
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter Column Number: ");
+         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         String result = solver.convertToTitle(input);
+         System.out.println("Column Title: " + result);
+         scanner.close();
+     }
+ }
+
+ Results:
+ Input: 28
+ Output: AB //
+
+
+
+ import java.util.*;
+
+ public class Solution {
+     public int maximumProduct(int[] nums) {
+         Arrays.sort(nums);
+         int n = nums.length;
+         return Math.max(nums[n - 1] * nums[n - 2] * nums[n - 3], nums[0] * nums[1] * nums[n - 1]);
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.util.System.in);
+         System.out.print("Enter array size: ");
+         int size = scanner.nextInt();
+         int[] input = new int[size];
+         System.out.println("Enter elements:");
+         for(int i = 0; i < size; i++) {
+             input[i] = scanner.nextInt();
+         }
+         Solution solver = new Solution();
+         int result = solver.maximumProduct(input);
+         System.out.println("Maximum Product: " + result);
+         scanner.close();
+     }
+ }
+ Results:
+ Input: 5 5 2 2 8 45 7
+ Output: 45 * 8 * 7 = 2520 //
+
+
+ import java.util.*;
+ public class Solution {
+     public int climbStairs(int n) {
+         if (n <= 2) return n;
+         int first = 1, second = 2;
+         for (int i = 3; i <= n; i++) {
+             int third = first + second;
+             first = second;
+             second = third;
+         }
+         return second;
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter total steps: ");
+         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         int result = solver.climbStairs(input);
+         System.out.println("Distinct Ways: " + result);
+         scanner.close();
+     }
+ }
+ Results:
+ Input: 5
+ Output: 8 //
+
+
+ import java.util.*;
+ public class Solution {
+     public List<Integer> selfDividingNumbers(int left, int right) {
+         List<Integer> ans = new ArrayList<>();
+         for (int i = left; i <= right; i++) {
+             if (isSelfDividing(i)) ans.add(i);
+         }
+         return ans;
+     }
+     private boolean isSelfDividing(int num) {
+         int temp = num;
+         while (temp > 0) {
+             int digit = temp % 10;
+             if (digit == 0 || num % digit != 0) return false;
+             temp /= 10;
+         }
+         return true;
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter left bound: ");
+         int left = scanner.nextInt();
+         System.out.print("Enter right bound: ");
+         int right = scanner.nextInt();
+         Solution solver = new Solution();
+         List<Integer> result = solver.selfDividingNumbers(left, right);
+         System.out.println("Self Dividing Numbers: " + result);
+         scanner.close();
+     }
+ }
+ Results:
+ Input: 1 22
+ Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22] //
+
+
+
+ import java.util.*;
+ public class Solution {
+     public String addBinary(String a, String b) {
+         StringBuilder sb = new StringBuilder();
+         int i = a.length() - 1, j = b.length() - 1, carry = 0;
+         while (i >= 0 || j >= 0 || carry == 1) {
+             if (i >= 0) carry += a.charAt(i--) - '0';
+             if (j >= 0) carry += b.charAt(j--) - '0';
+             sb.append(carry % 2);
+             carry /= 2;
+         }
+         return sb.reverse().toString();
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter first binary string: ");
+         String a = scanner.next();
+         System.out.print("Enter second binary string: ");
+         String b = scanner.next();
+         Solution solver = new Solution();
+         String result = solver.addBinary(a, b);
+         System.out.println("Binary Sum: " + result);
+         scanner.close();
+     }
+ }
+ Results:
+ Enter first binary string: 010111
+ Enter second binary string: 111000
+ Binary Sum: 1001111 
+
+
+ import java.util.*;
+ public class Solution {
+     public boolean isPowerOfTwo(int n) {
+         return n > 0 && (n & (n - 1)) == 0;
+     }
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter an integer: ");
+         int input = scanner.nextInt();
+         Solution solver = new Solution();
+         boolean result = solver.isPowerOfTwo(input);
+         System.out.println("Is Power of Two: " + result);
+         scanner.close();
+     }
+ }
+
+ Results:
+ Enter an integer: 16
+ Is Power of Two: true
